@@ -14,6 +14,7 @@ class Note(models.Model):
     created = models.DateTimeField(blank=True, auto_now=False, auto_now_add=False, default=datetime.datetime.now)
     active = models.BooleanField(default=True)
     tags = models.CharField(max_length = 100, blank=True)
+    img = models.ImageField(upload_to="notes-img")
     
 
     def save(self, *args, **kwargs):
