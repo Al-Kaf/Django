@@ -1,5 +1,16 @@
-<form method = "post">
-{% csrf_token %}
-{{form}}
-<button type = "submit" class = "add"> Ubdate Note </button>
-</form>
+{% extends "base.html"%}
+{%load static%}
+{% block body %}
+
+<div class="row">
+    <div class="add_form">
+        <form method = "post">
+        {% csrf_token %}
+        {{form}}
+        <button type = "submit" class = "add"> Ubdate Note </button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}	
