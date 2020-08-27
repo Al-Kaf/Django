@@ -5,6 +5,8 @@ from django.contrib.auth.views import LoginView
 from .models import Profile
 from django.shortcuts import get_object_or_404
 from .forms import UserForm, ProfileForm
+from django.contrib import messages
+
 # Create your views here.
 
 def home(request):
@@ -47,6 +49,7 @@ def edit_profile(request, slug):
         if user_form.is_valid() and profile_form.is_valid :
             user_form.save()
             new_profile = profile_form.save()
+            messages.success(request, 'Edit profile success.')
             return redirect ('/')
 
 
@@ -57,7 +60,8 @@ def edit_profile(request, slug):
 
     context = {
     'user_form' : user_form,
-    'profile_form' : profile_form
+    'profile_form' : profile_form,
+    'profile' : profile,
     }
     return render(request, 'edit_Profile.html', context)
 
@@ -77,6 +81,7 @@ def change_password(request, slug):
 
     context = {
     'password_form' : password_form,
+    'profile' : profile, 
     }
     return render(request, 'change_password.html', context)
 

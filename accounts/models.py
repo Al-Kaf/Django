@@ -6,6 +6,8 @@ from django.utils.text import slugify
 import datetime
 from django.db.models.signals import post_save
 
+
+
 class Profile(models.Model):
     user = models.OneToOneField(User , on_delete = models.CASCADE)
     slug = models.SlugField(null= True, blank = True )

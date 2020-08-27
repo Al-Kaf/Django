@@ -1,4 +1,5 @@
 {% extends "base.html"%}
+{% load bootstrap4 %}
 
 {% comment "" %}
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
@@ -67,8 +68,10 @@
     <div class= "add_form">
         <form method= "post">
             {% csrf_token %}    
-            {{form}}
-            <button class="btn btn-success" type= "submit">LogIn</button>
+            {% bootstrap_form form %}
+            {% buttons %}
+            <button type="submit" class="btn btn-primary">LogIn</button>
+            {% endbuttons %}
 
         </form>
     </div>

@@ -3,6 +3,6 @@
 <a href = "{% url 'notes:edit' note.slug %}"> Update Note Details</a>
 <hr>
 
-<h3>{{note.content}}</h3>
+<h3>{{note.content |safe}}</h3>
 <h4>{{note.created}}</h4>
 <h4>{{note.tags}}</h4>

@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'notes_app',
     'accounts',
+    'home',
+    'bootstrap4',
+    'ckeditor',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +134,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 LOGIN_REDIRECT_URL = '/notes'
+
+# ckeditor Config
+CKEDITOR_UPLOAD_PATH = "uploads/"

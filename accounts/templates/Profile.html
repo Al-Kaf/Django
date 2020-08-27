@@ -1,10 +1,11 @@
 {% extends "base.html"%}
+{% load bootstrap4 %}
 {% block body %}
 
 <div class= "row">
     <div class= "add_form">
         <center>
-        <img src="{{profile.img.url}}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+    <img src=" {% if profile.img %}{{profile.img.url}}{% endif %} " name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
         <h3 class="media-heading">{{profile.user}} </h3>
         <span><strong>Skills: </strong></span>
             <span class="label label-warning">HTML5/CSS</span>
