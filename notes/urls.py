@@ -31,3 +31,8 @@ urlpatterns = [
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
     
+
+
+admin.site.site_header = "Notes Admin Panel"
+admin.site.site_title = "Notes App Admin"
+admin.site.site_index_title = "Welcome To Notes App Admin Panel"

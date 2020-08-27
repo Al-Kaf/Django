@@ -4,4 +4,12 @@ from django.contrib import admin
 
 from .models import Profile
 
-admin.site.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ['user', 'slug', 'headline', 'join_date']
+    list_filter = ['headline', 'join_date']
+    search_fields = ['user__first_name', 'headline', 'bio']
+    list_editable = ['headline']
+
+
+
+admin.site.register(Profile, ProfileAdmin)
